@@ -1,7 +1,7 @@
-import { useEffect } from "react"
-import { getBeers } from '../action/actionBrewer'
+import React, { useEffect } from "react"
 import { connect } from 'react-redux'
-import { BeerCard } from "../components"
+import { getBeers } from '../actions/actionBrewer'
+import  BeerCard from '../components/Beercard'
 
 function BeerList({getBeers, beers}){
     useEffect(getBeers, [getBeers])

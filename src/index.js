@@ -5,7 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux';
+<<<<<<< HEAD
 import { reducer } from './redux/reducer';
+=======
+import reducer from './redux/reducer';
+>>>>>>> ea6adf8c7868efc5b91c29692281c0ce3e236572
 import thunk from 'redux-thunk';
 import { BrowserRouter as Router } from 'react-router-dom'
 
