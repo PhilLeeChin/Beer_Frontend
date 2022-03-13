@@ -1,11 +1,15 @@
 import './App.css';
-import BeerIndex from './container/Beerindex';
+import { BeerList, BeerShow } from './components';
+import { Switch, Route } from 'react-router-dom'
 
 function App() {
   return (
     <>
       <h1>What's Your Beer?</h1>
-      <BeerIndex/>
+      <Switch>
+        <Route path="/beers/:id"><BeerShow/></Route>
+        <Route path="/beers/"><BeerList/></Route>
+      </Switch>
     </>
   );
 }
