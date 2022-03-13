@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import BeerIndex from './Container/Beerindex';
+import BeerIndex from './container/Beerindex';
 
 function App() {
   return (
