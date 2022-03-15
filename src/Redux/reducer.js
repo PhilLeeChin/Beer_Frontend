@@ -1,11 +1,23 @@
-const initialState = {
-    beers: [],
+const initialBeer = {
     grabBeer: {
         name: "",
         description: "",
-        alcoholLvl: 0,
+        alcoholLvl: null,
         country: "",
-        yrMade: 0,
+        yrMade: null,
+    }
+}
+
+// const initialUser = {
+//     username:"",
+
+// }
+
+const initialState = {
+    beers: [],
+    grabBeer: initialBeer,
+    user: {
+        username: ""
     }
 }
 
