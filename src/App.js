@@ -1,18 +1,25 @@
 import './App.css';
-import { BeerList, BeerShow, Bar } from './components/imports';
+import { BeerList, BeerShow, Bar, Verify } from './components/imports';
 import { Switch, Route } from 'react-router-dom'
+import { connect } from 'react-redux';
 
-function App() {
+function App(props) {
   return (
     <>
       <h1>What's Your Beer?</h1>
       <Bar/>
+      { props.user.username ?
       <Switch>
         <Route path="/beers/:id"><BeerShow/></Route>
         <Route path="/beers/"><BeerList/></Route>
-      </Switch>
+        <Route path="/"><BeerList/></Route>
+      </Switch> :
+      <Verify/>
+      }
     </>
   );
 }
 
-export default App;
+const mapStateToProps = (state) =>  ({user: state.user})
+
+export default connect(mapStateToProps)(App);
