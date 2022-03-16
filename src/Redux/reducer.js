@@ -24,9 +24,11 @@ const initialState = {
 export function reducer(state=initialState, action){
     switch (action.type){
         case "GET_BEERS":
-            return {...state, beers: action.payload}
+            return {...state, beers: action.payload};
         case "GET_BEER":
-            return {...state, grabBeer: action.payload}
+            return {...state, grabBeer: action.payload};
+        case "SET_USER":
+            return {...state, user: action.payload};
         default:
             return {...state}
     }
