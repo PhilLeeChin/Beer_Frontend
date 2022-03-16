@@ -11,11 +11,11 @@ function BeerShow({getBeer, name, description, country, alcoholLvl,yrMade}){
     }, [getBeer, routeId])
 
     return <div className="self">
-        <h3>{name}</h3> 
-        <p>{description}</p>
-        <p>{country}</p>
-        <p>{alcoholLvl}</p>
-        <p>{yrMade}</p>
+        <h3>Beer: {name}</h3> 
+        <p>Fun Fact: {description}</p>
+        <p>Country made: {country}</p>
+        <p>Alcohol Level: {alcoholLvl}</p>
+        <p>Year created: {yrMade}</p>
     </div>
 }
 
