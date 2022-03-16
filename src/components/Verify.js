@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { submitRegister, submitLogin } from '../actions/actionBrewer'
 import { connect } from 'react-redux'
-
+import { useHistory } from 'react-router-dom'
 
 function Verify(props){
 
@@ -9,12 +9,14 @@ function Verify(props){
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const history = useHistory()
 
     const toggleRegister = () => setRegister(!register)
 
     const handleSubmit = (e) => {
         e.preventDefault()
         register ? props.submitRegister({username, email, password}) : props.submitLogin({username, password})
+        history.push("/beers")
     }
 
     return <>
@@ -23,6 +25,7 @@ function Verify(props){
             <label>Username: <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)}/></label><br/><br/>
             {register && <label>Email: <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} /></label>}<br/><br/>
             <label>Password: <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} /></label><br/><br/>
+            <input type="submit" value="Submit" />
         </form><br/>
         <button onClick={toggleRegister}>Or... {register? "Login" : "Register"}</button>
     </>
