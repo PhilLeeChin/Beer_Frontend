@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react'
 import { submitRegister, submitLogin } from '../actions/actionBrewer'
 import { connect } from 'react-redux'
@@ -27,7 +28,7 @@ function Verify(props){
             <label>Password: <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} /></label><br/><br/>
             <input type="submit" value="Submit" />
         </form><br/>
-        <button onClick={toggleRegister}>Or... {register? "Login" : "Register"}</button>
+        <button onClick={toggleRegister}>{register? "Login" : "Register"}</button>
     </>
 }
 
